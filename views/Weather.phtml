@@ -1,0 +1,13 @@
+<?php require '__header.phtml'; ?>
+<h1>Počasí</h1>
+<?php foreach($forecasts as $forecast):
+  $time = strtotime($forecast->date);
+  $days = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"];
+  $day = $days[date("w", $time)];
+  $date = date("j.n.Y", $time);
+?>
+<div>
+  <?=$day?>, <?=$date?>: <?=$forecast->low ?>-<?=$forecast->high ?>°C
+</div>
+<?php endforeach; ?>
+<?php require '__footer.phtml'; ?>

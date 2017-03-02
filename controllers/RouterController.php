@@ -5,6 +5,7 @@ class RouterController extends BaseController {
   private function transformPathToController($path) {
     $path = ltrim($path, "/");
     $path = trim($path);
+    $path = explode("?", $path)[0];
     $path = explode("/", $path);
 
     $controllerUrl = $path[0];

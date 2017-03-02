@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $devmode = $_SERVER["HTTP_HOST"] == "localhost";
 if ($devmode) {
   ini_set('display_errors', 1);

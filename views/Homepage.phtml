@@ -1,3 +1,12 @@
 <?php require '__header.phtml'; ?>
 <h1>Homepage</h1>
+<div style="margin-bottom: 2vh; font-weight: bold;">
+  <?php if ($isLogin): ?>
+    <div style="color: green;">
+      Logged in
+    </div>
+  <?php else: ?>
+      No login
+  <?php endif ?>
+</div>
 <?php require '__footer.phtml'; ?>

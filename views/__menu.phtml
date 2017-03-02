@@ -1,0 +1,10 @@
+<div>
+  | <a href="/">Homepage</a> |
+  <a href="/weather">Weather</a> |
+  <?php if ($isLoggedIn): ?>
+    <a href="/logout">Logout</a> |
+  <?php else: ?>
+    <a href="/login">Login</a> |
+    <a href="/register">Register</a> |
+  <?php endif ?>
+</div>

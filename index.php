@@ -18,6 +18,8 @@ function autoload($name) {
 
 spl_autoload_register("autoload");
 
+DB::connect("host", "user", "password", "database");
+
 $router = new RouterController;
 
 $router->render([$_SERVER["REQUEST_URI"]]);

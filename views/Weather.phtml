@@ -1,9 +1,24 @@
 <?php require '__header.phtml'; ?>
-<h1>Počasí</h1>
+<?php
+  $allTranslations = [
+    "cz" => [
+      "header" => "Počasí",
+      "days" => ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"]
+    ],
+    "en" => [
+      "header" => "Weather",
+      "days" => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    ]
+  ];
+  $translations = $allTranslations[$lang];
+?>
+<h1><?=$translations["header"]?></h1>
+<div>
+  <a href="?lang=en">EN</a> | <a href="?lang=cz">CZ</a>
+</div>
 <?php foreach($forecasts as $forecast):
   $time = strtotime($forecast->date);
-  $days = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"];
-  $day = $days[date("w", $time)];
+  $day = $translations["days"][date("w", $time)];
   $date = date("j.n.Y", $time);
 ?>
 <div>

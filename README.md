@@ -1,5 +1,5 @@
 # school-php-mvc
-Example MVC project for students.
+Example MVC project for students of http://sspbrno.cz
 
 # Study materials
 
